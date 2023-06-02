@@ -41,3 +41,8 @@ done
 # Calculate and display average roundtrip time
 average_time=$((total_time / num_iterations))
 echo "Average roundtrip time: $average_time ms"
+
+
+# Make sure to replace the placeholders (your_postgresql_server_name, your_database_name, your_username, your_password) with your actual Azure PostgreSQL server details.
+# Save the script in a file (e.g., measure_latency.sh), give it executable permissions (chmod +x measure_latency.sh), and then run it (./measure_latency.sh).
+# It will execute the "Select 1" query multiple times, measure the roundtrip time, and calculate the average roundtrip time for you.
