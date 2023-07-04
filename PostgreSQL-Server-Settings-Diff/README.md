@@ -23,8 +23,9 @@ To run this script, you need to have the following installed:
 
 6. Run the script using the following command:
 
-python server_settings_diff.py
-
+  ```bash
+  python server_settings_diff.py
+  ```
 
 7. The script will connect to both PostgreSQL servers, compare their settings, and display the differences between them.
 
