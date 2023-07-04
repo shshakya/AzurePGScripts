@@ -70,6 +70,8 @@ for row2 in rows2:
     if name in settings_dict:
         setting1 = settings_dict[name][0]
         settings_dict[name] = (setting1, setting2)
+    else:
+        settings_dict[name] = (None, setting2)
 
 # Sort the settings by name
 sorted_settings = sorted(settings_dict.items())
@@ -83,6 +85,22 @@ for name, (setting1, setting2) in sorted_settings:
     if setting1 is not None and setting2 is not None and setting1 != setting2:
         differences_found = True
         print("{:<25s} {:<25s} {:<25s}".format(name, setting1, setting2))
+
+print("\nParameters existing on {} but not on {}:".format(host1, host2))
+print("{:<25s} {:<25s}".format("Name", "Setting ({})".format(host1)))
+print("-" * 80)
+for name, (setting1, setting2) in sorted_settings:
+    if setting1 is not None and setting2 is None:
+        differences_found = True
+        print("{:<25s} {:<25s}".format(name, setting1))
+
+print("\nParameters existing on {} but not on {}:".format(host2, host1))
+print("{:<25s} {:<25s}".format("Name", "Setting ({})".format(host2)))
+print("-" * 80)
+for name, (setting1, setting2) in sorted_settings:
+    if setting1 is None and setting2 is not None:
+        differences_found = True
+        print("{:<25s} {:<25s}".format(name, setting2))
 
 if not differences_found:
     print("No differences found.")
