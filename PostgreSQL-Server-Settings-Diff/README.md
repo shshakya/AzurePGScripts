@@ -27,7 +27,17 @@ To run this script, you need to have the following installed:
   python server_settings_diff.py
   ```
 
-7. The script will connect to both PostgreSQL servers, compare their settings, and display the differences between them.
+7. The script will compare the parameters between the two servers and display the following sections:
+
+-   Differences between server1 and server2:
+    
+    -   Lists the parameters that have different settings between the servers.
+-   Parameters existing on server1 but not on server2:
+    
+    -   Lists the parameters that exist on server1 but not on server2, along with their settings from server1.
+-   Parameters existing on server2 but not on server1:
+    
+    -   Lists the parameters that exist on server2 but not on server1, along with their settings from server2..
 
 ## Note
 
